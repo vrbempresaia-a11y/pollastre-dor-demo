@@ -1,53 +1,502 @@
-El sabor de sempre, preparat per a tu.
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Pollastre d'Or | Pollastres a l'ast i menjar preparat</title>
 
-Pollastres a l’ast i menjar preparat per gaudir a casa, amb la comoditat de poder fer la teva comanda amb antelació.
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-🛒 Fer una comanda · Veure especialitats
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffaf3;
+      color: #292929;
+      line-height: 1.6;
+    }
 
-Les nostres especialitats
+    header {
+      background: #fff;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-Una selecció de plats preparats per gaudir en família.
+    .logo {
+      font-size: 1.45rem;
+      font-weight: bold;
+      color: #b52b20;
+    }
 
-🍗 Pollastre a l’ast
-El nostre clàssic per gaudir a casa.
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 22px;
+      font-weight: 600;
+    }
 
-🥔 Guarnicions
-Acompanya la teva comanda amb diferents opcions.
+    nav a:hover {
+      color: #b52b20;
+    }
 
-🍽️ Menjar preparat
-Diferents propostes per als teus àpats de cap de setmana.
+    .hero {
+      padding: 90px 7%;
+      background: linear-gradient(135deg, #fff4df, #fffaf3);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
 
-Fes la teva comanda
+    .hero h1 {
+      font-size: 3.3rem;
+      line-height: 1.1;
+      margin-bottom: 22px;
+      color: #8f2119;
+    }
 
-Sol·licita la teva comanda amb antelació i evita esperes innecessàries.
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 620px;
+      margin-bottom: 30px;
+      color: #555;
+    }
 
-Per a quin dia vols fer la comanda?
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-Per a quantes persones?
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
 
-Què vols encarregar?
+    .btn-primary {
+      background: #b52b20;
+      color: white;
+    }
 
-Nom
+    .btn-primary:hover {
+      background: #8f2119;
+    }
 
-Telèfon
+    .btn-secondary {
+      background: white;
+      color: #b52b20;
+      border: 1px solid #b52b20;
+    }
 
-Enviar sol·licitud de comanda
+    .hero-card {
+      background: white;
+      border-radius: 24px;
+      padding: 35px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    }
 
-Una manera més senzilla de fer la teva comanda
+    .hero-card .emoji {
+      font-size: 7rem;
+      margin-bottom: 15px;
+    }
 
-Aquesta demostració mostra com una solució digital pot facilitar les comandes anticipades i millorar l’experiència del client.
+    .hero-card h2 {
+      color: #8f2119;
+      margin-bottom: 8px;
+    }
 
-1 · Tria
-Indica què vols encarregar.
+    section {
+      padding: 75px 7%;
+    }
 
-2 · Sol·licita
-Deixa’ns les teves dades i el dia de recollida.
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-3 · Recull
-L’establiment confirma la teva comanda.
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: #8f2119;
+      margin-bottom: 10px;
+    }
 
-El Pollastre d’Or
+    .section-title p {
+      color: #666;
+    }
 
-Santpedor · Barcelona
+    .specialties {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
 
-Aquesta pàgina forma part d’una demostració desenvolupada per VRB Empresa IA.
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .card .icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #8f2119;
+      margin-bottom: 10px;
+    }
+
+    .order-section {
+      background: #fff1dc;
+    }
+
+    .form-container {
+      max-width: 720px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .number {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: #b52b20;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #292929;
+      color: white;
+      text-align: center;
+      padding: 35px 7%;
+    }
+
+    footer p {
+      margin-bottom: 7px;
+    }
+
+    .demo {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 6%;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .specialties,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🍗 El Pollastre d'Or</div>
+
+    <nav>
+      <a href="#inici">Inici</a>
+      <a href="#especialitats">Especialitats</a>
+      <a href="#comanda">Comanda</a>
+      <a href="#contacte">Contacte</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inici">
+      <div>
+        <h1>El sabor de sempre, preparat per a tu.</h1>
+
+        <p>
+          Pollastres a l'ast i menjar preparat per gaudir a casa,
+          amb la comoditat de poder fer la teva comanda amb antelació.
+        </p>
+
+        <div class="buttons">
+          <a href="#comanda" class="btn btn-primary">
+            🛒 Fer una comanda
+          </a>
+
+          <a href="#especialitats" class="btn btn-secondary">
+            Veure especialitats
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="emoji">🍗</div>
+        <h2>El Pollastre d'Or</h2>
+        <p>Pollastres a l'ast i menjar preparat</p>
+      </div>
+    </section>
+
+    <section id="especialitats">
+      <div class="section-title">
+        <h2>Les nostres especialitats</h2>
+        <p>
+          Una selecció de plats preparats per gaudir en família.
+        </p>
+      </div>
+
+      <div class="specialties">
+
+        <div class="card">
+          <div class="icon">🍗</div>
+          <h3>Pollastre a l'ast</h3>
+          <p>
+            El nostre clàssic per gaudir a casa.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🥔</div>
+          <h3>Guarnicions</h3>
+          <p>
+            Acompanya la teva comanda amb diferents opcions.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🍽️</div>
+          <h3>Menjar preparat</h3>
+          <p>
+            Diferents propostes per als teus àpats de cap de setmana.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="order-section" id="comanda">
+
+      <div class="section-title">
+        <h2>Fes la teva comanda</h2>
+        <p>
+          Sol·licita la teva comanda amb antelació i evita esperes innecessàries.
+        </p>
+      </div>
+
+      <div class="form-container">
+
+        <form onsubmit="enviarComanda(event)">
+
+          <div class="form-group">
+            <label for="dia">
+              Per a quin dia vols fer la comanda?
+            </label>
+
+            <input type="date" id="dia" required>
+          </div>
+
+          <div class="form-group">
+            <label for="persones">
+              Per a quantes persones?
+            </label>
+
+            <select id="persones" required>
+              <option value="">Selecciona una opció</option>
+              <option>1-2 persones</option>
+              <option>3-4 persones</option>
+              <option>5-6 persones</option>
+              <option>Més de 6 persones</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="encarrec">
+              Què vols encarregar?
+            </label>
+
+            <textarea
+              id="encarrec"
+              placeholder="Indica els productes que vols encarregar..."
+              required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input
+              type="text"
+              id="nom"
+              placeholder="El teu nom"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefon">Telèfon</label>
+            <input
+              type="tel"
+              id="telefon"
+              placeholder="El teu telèfon"
+              required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Enviar sol·licitud de comanda
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
+    <section>
+
+      <div class="section-title">
+        <h2>Una manera més senzilla de fer la teva comanda</h2>
+
+        <p>
+          Aquesta demostració mostra com una solució digital pot facilitar
+          les comandes anticipades i millorar l'experiència del client.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="number">1</div>
+          <h3>Tria</h3>
+          <p>Indica què vols encarregar.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">2</div>
+          <h3>Sol·licita</h3>
+          <p>
+            Deixa'ns les teves dades i el dia de recollida.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="number">3</div>
+          <h3>Recull</h3>
+          <p>
+            L'establiment confirma la teva comanda.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contacte">
+
+    <p><strong>El Pollastre d'Or</strong></p>
+
+    <p>Santpedor · Barcelona</p>
+
+    <p class="demo">
+      Aquesta pàgina forma part d'una demostració desenvolupada per
+      VRB Empresa IA.
+    </p>
+
+  </footer>
+
+  <script>
+    function enviarComanda(event) {
+      event.preventDefault();
+
+      const nom = document.getElementById("nom").value;
+
+      alert(
+        "Gràcies, " + nom +
+        "! Hem rebut la teva sol·licitud de comanda. " +
+        "L'establiment es posarà en contacte amb tu per confirmar-la."
+      );
+    }
+  </script>
+
+</body>
+</html>
