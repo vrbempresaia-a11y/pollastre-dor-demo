@@ -106,13 +106,17 @@
     .hero-card {
       background: white;
       border-radius: 24px;
-      padding: 35px;
+      padding: 20px;
       text-align: center;
       box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      overflow: hidden;
     }
 
-    .hero-card .emoji {
-      font-size: 7rem;
+    .hero-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 18px;
       margin-bottom: 15px;
     }
 
@@ -162,6 +166,55 @@
     .card h3 {
       color: #8f2119;
       margin-bottom: 10px;
+    }
+
+    /* PLATS PER EMPORTAR */
+
+    .takeaway-section {
+      background: #fff4e7;
+    }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .takeaway-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .takeaway-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .takeaway-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .takeaway-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .takeaway-content h3 {
+      color: #8f2119;
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+
+    .takeaway-content p {
+      color: #666;
+      font-size: 0.95rem;
     }
 
     .order-section {
@@ -248,14 +301,19 @@
     }
 
     @media (max-width: 800px) {
+
       header {
         flex-direction: column;
         gap: 12px;
       }
 
+      nav {
+        text-align: center;
+      }
+
       nav a {
-        margin: 0 7px;
-        font-size: 0.9rem;
+        margin: 0 5px;
+        font-size: 0.85rem;
       }
 
       .hero {
@@ -268,7 +326,8 @@
       }
 
       .specialties,
-      .steps {
+      .steps,
+      .takeaway-grid {
         grid-template-columns: 1fr;
       }
 
@@ -282,21 +341,30 @@
 <body>
 
   <header>
+
     <div class="logo">🍗 El Pollastre d'Or</div>
 
     <nav>
       <a href="#inici">Inici</a>
       <a href="#especialitats">Especialitats</a>
+      <a href="#emportar">Per emportar</a>
       <a href="#comanda">Comanda</a>
       <a href="#contacte">Contacte</a>
     </nav>
+
   </header>
 
   <main>
 
+    <!-- INICI -->
+
     <section class="hero" id="inici">
+
       <div>
-        <h1>El sabor de sempre, preparat per a tu.</h1>
+
+        <h1>
+          El sabor de sempre, preparat per a tu.
+        </h1>
 
         <p>
           Pollastres a l'ast i menjar preparat per gaudir a casa,
@@ -304,67 +372,186 @@
         </p>
 
         <div class="buttons">
+
           <a href="#comanda" class="btn btn-primary">
             🛒 Fer una comanda
           </a>
 
-          <a href="#especialitats" class="btn btn-secondary">
-            Veure especialitats
+          <a href="#emportar" class="btn btn-secondary">
+            Veure els plats
           </a>
+
         </div>
+
       </div>
 
       <div class="hero-card">
-        <div class="emoji">🍗</div>
+
+        <img
+          src="https://images.unsplash.com/photo-1768238907887-023b7ac9f450?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200"
+          alt="Pollastre rostit"
+        >
+
         <h2>El Pollastre d'Or</h2>
-        <p>Pollastres a l'ast i menjar preparat</p>
+
+        <p>
+          Pollastres a l'ast i menjar preparat
+        </p>
+
       </div>
+
     </section>
 
+
+    <!-- ESPECIALITATS -->
+
     <section id="especialitats">
+
       <div class="section-title">
+
         <h2>Les nostres especialitats</h2>
+
         <p>
           Una selecció de plats preparats per gaudir en família.
         </p>
+
       </div>
 
       <div class="specialties">
 
         <div class="card">
+
           <div class="icon">🍗</div>
+
           <h3>Pollastre a l'ast</h3>
+
           <p>
             El nostre clàssic per gaudir a casa.
           </p>
+
         </div>
 
         <div class="card">
+
           <div class="icon">🥔</div>
+
           <h3>Guarnicions</h3>
+
           <p>
             Acompanya la teva comanda amb diferents opcions.
           </p>
+
         </div>
 
         <div class="card">
+
           <div class="icon">🍽️</div>
+
           <h3>Menjar preparat</h3>
+
           <p>
             Diferents propostes per als teus àpats de cap de setmana.
           </p>
+
         </div>
 
       </div>
+
     </section>
+
+
+    <!-- PLATS PER EMPORTAR -->
+
+    <section class="takeaway-section" id="emportar">
+
+      <div class="section-title">
+
+        <h2>Plats per emportar</h2>
+
+        <p>
+          Els nostres plats preparats per gaudir a casa.
+        </p>
+
+      </div>
+
+      <div class="takeaway-grid">
+
+        <div class="takeaway-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1768238907887-023b7ac9f450?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200"
+            alt="Pollastre a l'ast"
+          >
+
+          <div class="takeaway-content">
+
+            <h3>Pollastre a l'ast</h3>
+
+            <p>
+              Cruixent per fora, sucós per dins.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="takeaway-card">
+
+          <img
+            src="https://images.pexels.com/photos/29027774/pexels-photo-29027774.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Cargols preparats"
+          >
+
+          <div class="takeaway-content">
+
+            <h3>Cargols</h3>
+
+            <p>
+              Una proposta tradicional per compartir.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="takeaway-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1571805341302-f857308690e3?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200"
+            alt="Ensaladilla russa"
+          >
+
+          <div class="takeaway-content">
+
+            <h3>Ensaladilla russa</h3>
+
+            <p>
+              Fresca, casolana i preparada per emportar.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMANDA -->
 
     <section class="order-section" id="comanda">
 
       <div class="section-title">
+
         <h2>Fes la teva comanda</h2>
+
         <p>
           Sol·licita la teva comanda amb antelació i evita esperes innecessàries.
         </p>
+
       </div>
 
       <div class="form-container">
@@ -372,28 +559,51 @@
         <form onsubmit="enviarComanda(event)">
 
           <div class="form-group">
+
             <label for="dia">
               Per a quin dia vols fer la comanda?
             </label>
 
             <input type="date" id="dia" required>
+
           </div>
 
+
           <div class="form-group">
+
             <label for="persones">
               Per a quantes persones?
             </label>
 
             <select id="persones" required>
-              <option value="">Selecciona una opció</option>
-              <option>1-2 persones</option>
-              <option>3-4 persones</option>
-              <option>5-6 persones</option>
-              <option>Més de 6 persones</option>
+
+              <option value="">
+                Selecciona una opció
+              </option>
+
+              <option>
+                1-2 persones
+              </option>
+
+              <option>
+                3-4 persones
+              </option>
+
+              <option>
+                5-6 persones
+              </option>
+
+              <option>
+                Més de 6 persones
+              </option>
+
             </select>
+
           </div>
 
+
           <div class="form-group">
+
             <label for="encarrec">
               Què vols encarregar?
             </label>
@@ -402,25 +612,39 @@
               id="encarrec"
               placeholder="Indica els productes que vols encarregar..."
               required></textarea>
+
           </div>
 
+
           <div class="form-group">
-            <label for="nom">Nom</label>
+
+            <label for="nom">
+              Nom
+            </label>
+
             <input
               type="text"
               id="nom"
               placeholder="El teu nom"
               required>
+
           </div>
 
+
           <div class="form-group">
-            <label for="telefon">Telèfon</label>
+
+            <label for="telefon">
+              Telèfon
+            </label>
+
             <input
               type="tel"
               id="telefon"
               placeholder="El teu telèfon"
               required>
+
           </div>
+
 
           <button type="submit" class="btn btn-primary">
             Enviar sol·licitud de comanda
@@ -429,53 +653,98 @@
         </form>
 
       </div>
+
     </section>
+
+
+    <!-- COM FUNCIONA -->
 
     <section>
 
       <div class="section-title">
-        <h2>Una manera més senzilla de fer la teva comanda</h2>
+
+        <h2>
+          Una manera més senzilla de fer la teva comanda
+        </h2>
 
         <p>
           Aquesta demostració mostra com una solució digital pot facilitar
           les comandes anticipades i millorar l'experiència del client.
         </p>
+
       </div>
+
 
       <div class="steps">
 
         <div class="step">
-          <div class="number">1</div>
-          <h3>Tria</h3>
-          <p>Indica què vols encarregar.</p>
+
+          <div class="number">
+            1
+          </div>
+
+          <h3>
+            Tria
+          </h3>
+
+          <p>
+            Indica què vols encarregar.
+          </p>
+
         </div>
 
+
         <div class="step">
-          <div class="number">2</div>
-          <h3>Sol·licita</h3>
+
+          <div class="number">
+            2
+          </div>
+
+          <h3>
+            Sol·licita
+          </h3>
+
           <p>
             Deixa'ns les teves dades i el dia de recollida.
           </p>
+
         </div>
 
+
         <div class="step">
-          <div class="number">3</div>
-          <h3>Recull</h3>
+
+          <div class="number">
+            3
+          </div>
+
+          <h3>
+            Recull
+          </h3>
+
           <p>
             L'establiment confirma la teva comanda.
           </p>
+
         </div>
 
       </div>
+
     </section>
 
   </main>
 
+
+  <!-- PEU DE PÀGINA -->
+
   <footer id="contacte">
 
-    <p><strong>El Pollastre d'Or</strong></p>
+    <p>
+      <strong>El Pollastre d'Or</strong>
+    </p>
 
-    <p>Santpedor · Barcelona</p>
+    <p>
+      Santpedor · Barcelona
+    </p>
 
     <p class="demo">
       Aquesta pàgina forma part d'una demostració desenvolupada per
@@ -484,18 +753,24 @@
 
   </footer>
 
+
   <script>
+
     function enviarComanda(event) {
+
       event.preventDefault();
 
-      const nom = document.getElementById("nom").value;
+      const nom =
+        document.getElementById("nom").value;
 
       alert(
         "Gràcies, " + nom +
         "! Hem rebut la teva sol·licitud de comanda. " +
         "L'establiment es posarà en contacte amb tu per confirmar-la."
       );
+
     }
+
   </script>
 
 </body>
